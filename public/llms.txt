@@ -1,0 +1,44 @@
+# Void Image Viewer
+
+> Void Image Viewer is a free, lightweight, open-source (MIT) image viewer for Windows 10/11. It opens dozens of formats — including modern ones like WebP, AVIF, HEIC and JPEG XL — with no ads, no telemetry and no sign-up. voidimageviewer.com is an independent resource and download mirror for the open-source project, offering English and Simplified Chinese pages.
+
+## Key facts
+
+- Platform: Windows 10 and Windows 11 (64-bit; ARM/ARM64 portable builds available)
+- License: MIT (open source, free forever)
+- Latest version: 1.0.0.15
+- Price: Free (0 USD)
+- No ads, no telemetry, no account required
+- Installer and portable ("green") builds available
+
+## Primary pages (English)
+
+- [Home](https://voidimageviewer.com/): Overview, features and download.
+- [Download](https://voidimageviewer.com/download): All installer and portable builds for the latest version, plus previous versions.
+- [Features](https://voidimageviewer.com/features): Full feature list.
+- [Supported formats](https://voidimageviewer.com/supported-formats): Every supported image format with an in-browser preview tool.
+- [Installation guide](https://voidimageviewer.com/installation): Install and set as default image viewer.
+- [Release notes](https://voidimageviewer.com/release-notes): Full version history.
+- [Screenshots](https://voidimageviewer.com/screenshots): Interface screenshots.
+- [FAQ](https://voidimageviewer.com/faq): Common questions about download, install and usage.
+- [About](https://voidimageviewer.com/about): Project background and disclaimer.
+
+## Chinese pages (简体中文)
+
+- [首页](https://voidimageviewer.com/zh/)
+- [下载](https://voidimageviewer.com/zh/download)
+- [功能特性](https://voidimageviewer.com/zh/features)
+- [支持格式](https://voidimageviewer.com/zh/supported-formats)
+- [安装教程](https://voidimageviewer.com/zh/installation)
+- [更新日志](https://voidimageviewer.com/zh/release-notes)
+- [常见问题](https://voidimageviewer.com/zh/faq)
+
+## Supported formats
+
+PNG, JPEG, GIF, BMP, TIFF, WebP, AVIF, HEIC/HEIF, SVG, ICO, JPEG XL (JXL), and common camera RAW files.
+
+## Notes
+
+- This site is an independent mirror and is not affiliated with the original authors.
+- Binaries are verified against the official GitHub release checksums before publishing.
+- Canonical domain: https://voidimageviewer.com

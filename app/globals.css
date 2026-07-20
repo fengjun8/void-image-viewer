@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-violet: var(--violet);
+  --color-amber: var(--amber);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #f6f7fb;
+  --foreground: #14142b;
+  --card: #ffffff;
+  --card-foreground: #14142b;
+  --surface-2: #eef0f7;
+  --border: rgba(6, 0, 139, 0.12);
+  --muted: #5c5c72;
+  --muted-foreground: #5c5c72;
+  --primary: #06008b;
+  --primary-foreground: #ffffff;
+  --accent: #06008b;
+  --violet: #06008b;
+  --violet-dim: rgba(6, 0, 139, 0.09);
+  --amber: #b45309;
+  --amber-dim: rgba(180, 83, 9, 0.12);
+  --green: #15803d;
+  --brand: #06008b;
+  --on-brand: #ffffff;
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  ::selection {
+    background: var(--violet);
+    color: var(--background);
+  }
+}
+
+@keyframes irisOpen {
+  to { clip-path: circle(75% at 50% 50%); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.iris-blades {
+  animation: spin 22s linear infinite;
+}
+.iris-mask {
+  clip-path: circle(4% at 50% 50%);
+  animation: irisOpen 1.6s cubic-bezier(0.2, 0.9, 0.25, 1) 0.3s forwards;
+}
+.iris-core {
+  opacity: 0;
+  animation: fadeIn 1s ease 1.4s forwards;
+}
+
+/* ---------- Shared layout / component utilities ---------- */
+@layer components {
+  .container-v {
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-inline: 1.75rem;
+  }
+  .page-top {
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    color: var(--violet);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .page-h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-size: clamp(30px, 4.4vw, 46px);
+    line-height: 1.1;
+  }
+  .page-lead {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 620px;
+    margin-top: 1rem;
+  }
+  .h2-v {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-size: clamp(24px, 3.2vw, 32px);
+  }
+  .card-v {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .card-v-hover {
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card-v-hover:hover {
+    border-color: var(--violet);
+    transform: translateY(-2px);
+  }
+  .btn-v-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--violet);
+    color: var(--on-brand);
+    padding: 0.65rem 1.25rem;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .btn-v-primary:hover {
+    background: #1811b8;
+  }
+  .btn-v-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    padding: 0.65rem 1.25rem;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: border-color 0.15s;
+  }
+  .btn-v-ghost:hover {
+    border-color: var(--violet);
+  }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .link-v {
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+  .link-v:hover {
+    color: var(--violet);
+  }
+  .prose-v {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .prose-v strong {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+}
