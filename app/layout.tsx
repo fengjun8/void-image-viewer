@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://voidimageviewer.com'),
   title: {
     default: 'Void Image Viewer — Free Open Source Image Viewer for Windows',
-    template: '%s | Void Image Viewer',
+    template: '%s | VoidImageViewer',
   },
   applicationName: 'Void Image Viewer',
   description: 'Download the latest Void Image Viewer for Windows. A lightweight open-source image viewer supporting PNG, JPEG, GIF, WebP, AVIF, SVG, HEIC, TIFF and more. Free forever, MIT licensed.',
