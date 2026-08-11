@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'Download Void Image Viewer for Windows - Free & Portable',
+    title: 'Download VoidImageViewer for Windows - Free & Portable',
     description:
       'Download the latest Void Image Viewer for Windows. SHA256-verified, virus-free, MIT licensed. Includes a portable no-install version.',
     path: '/download',
