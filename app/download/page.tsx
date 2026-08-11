@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Download VoidImageViewer (Void Image Viewer) for Windows - free and open source, SHA256 verified. Portable and installer builds, plus WebP, AVIF, HEIC, SVG and more formats.',
     path: '/download',
     keywords:
-      'void image viewer download, void image viewer portable, void image viewer windows 10, free image viewer download',
+      'VoidImageViewer download, download Void Image Viewer, free image viewer download Windows, portable image viewer, image viewer installer',
   }),
 }
 

@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     description:
       'See VoidImageViewer in action: clean main viewer, instant folder thumbnails, format info panel, animated GIF/WebP playback, fullscreen mode and dark/light themes. Free open-source image viewer for Windows.',
     path: '/screenshots',
+    keywords:
+      'VoidImageViewer screenshots, Void Image Viewer screenshots, image viewer interface, Windows image viewer UI, image viewer preview',
   }),
 }
 

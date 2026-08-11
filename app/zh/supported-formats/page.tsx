@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     description:
       'VoidImageViewer（Void Image Viewer）在 Windows 上支持的所有图片格式：WebP、AVIF、HEIC、JPEG XL、SVG、TIFF、RAW、PNG、JPEG、GIF 等，免费在线预览任意格式，无需安装。',
     path: '/supported-formats',
+    keywords: '支持的图片格式, 打开 WebP, AVIF 查看器, HEIC 查看器, 图片格式支持, Windows 看图格式',
   }),
 }
 

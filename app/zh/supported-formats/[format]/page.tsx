@@ -32,6 +32,7 @@ export async function generateMetadata({
       description,
       path: `/supported-formats/${fmt.slug}`,
       type: 'article',
+      keywords: `${fmt.name} 查看器, 打开 ${fmt.name} 文件, ${fmt.name} 转 JPG, ${fmt.name} Windows, ${fmt.ext} 预览`,
     }),
   }
 }

@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Nav } from '@/components/nav'
 import { SiteFooter } from '@/components/site-footer'
 import { BackToTop } from '@/components/back-to-top'
 import { ui } from '@/lib/i18n'
+
+export const metadata: Metadata = {
+  title: '404 - Page Not Found',
+  description: 'The page you are looking for does not exist. Go back to the VoidImageViewer homepage or try the download page.',
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
   return (

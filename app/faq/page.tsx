@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     description:
       'Frequently asked questions about VoidImageViewer (Void Image Viewer): download, installation, security and checksums, supported formats like WebP, AVIF and HEIC, the portable version and setting your default image viewer on Windows.',
     path: '/faq',
+    keywords:
+      'VoidImageViewer FAQ, Void Image Viewer FAQ, image viewer questions, image viewer help, set default image viewer Windows, portable image viewer',
   }),
 }
 

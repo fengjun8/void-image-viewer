@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     description:
       'Step-by-step guide to install VoidImageViewer (Void Image Viewer) on Windows 10/11 and set it as your default image viewer. Covers the installer, portable version and troubleshooting.',
     path: '/installation',
-    keywords: 'install void image viewer, set default image viewer windows, void image viewer setup',
+    keywords:
+      'install VoidImageViewer, Void Image Viewer installation, set default image viewer Windows, image viewer setup, portable image viewer install',
   }),
 }
 

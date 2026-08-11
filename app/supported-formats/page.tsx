@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     description:
       'All image formats VoidImageViewer opens on Windows: WebP, AVIF, HEIC, JPEG XL, SVG, TIFF, RAW, PNG, JPEG, GIF and more. Preview any format online for free - no install required.',
     path: '/supported-formats',
+    keywords:
+      'supported image formats, open WebP files, AVIF viewer, HEIC viewer, image format support Windows, JPEG XL viewer',
   }),
 }
 

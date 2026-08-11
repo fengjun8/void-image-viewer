@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
       '在 Windows 10/11 上安装 VoidImageViewer（Void Image Viewer）并设为默认图片查看器的详细教程，涵盖安装版、便携版及常见问题排查。',
     path: '/installation',
-    keywords: '安装 Void Image Viewer, 设置默认图片查看器, Void Image Viewer 安装教程',
+    keywords: '安装 VoidImageViewer, Void Image Viewer 安装教程, 设置默认图片查看器, 便携版安装, Windows 看图软件安装',
   }),
 }
 

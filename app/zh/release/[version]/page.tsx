@@ -21,6 +21,7 @@ export async function generateMetadata({
       title: `v${rel.version} 更新日志 - 新功能与修复`,
       description: `${pick(rel.summary, 'zh')} 下载 VoidImageViewer Windows 版——免费开源图片查看器。`,
       path: `/release/${rel.slug}`,
+      keywords: `VoidImageViewer v${rel.version}, Void Image Viewer ${rel.version}, 更新日志, 版本历史`,
     }),
   }
 }

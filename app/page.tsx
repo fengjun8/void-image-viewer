@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       'Download Void Image Viewer for Windows — a free, lightweight open-source image viewer. Supports PNG, JPEG, GIF, WebP, AVIF, HEIC, SVG, TIFF and more. MIT licensed.',
     path: '/',
     keywords:
-      'VoidimageViewer, Void Image Viewer, image viewer, Windows image viewer, free image viewer, open source image viewer, WebP viewer, AVIF viewer, HEIC viewer',
+      'VoidimageViewer, Void Image Viewer, image viewer for Windows, free image viewer download, open source image viewer, Windows 10 image viewer',
   }),
 }
 

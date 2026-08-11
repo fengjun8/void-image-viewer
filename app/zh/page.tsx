@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       '下载最新版 Void Image Viewer。轻量、快速的 Windows 开源图片查看器，支持 PNG、JPEG、GIF、WebP、AVIF、SVG、HEIC、TIFF 等格式，完全免费，MIT 授权。',
     path: '/',
     keywords:
-      'VoidimageViewer, Void Image Viewer, 图片查看器, Windows 图片查看器, 免费图片查看器, 开源图片查看器, WebP 查看器, AVIF 查看器',
+      'VoidimageViewer, Void Image Viewer, 图片查看器下载, Windows 图片查看器, 免费看图软件, 开源图片查看器',
   }),
 }
 

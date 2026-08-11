@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     description:
       'About this independent VoidImageViewer (Void Image Viewer) resource and download mirror: binaries verified against official checksums, GitHub source links and project background. Not affiliated with the original authors.',
     path: '/about',
+    keywords:
+      'VoidImageViewer about, Void Image Viewer mirror, image viewer download site, open source image viewer project, download mirror',
   }),
 }
 

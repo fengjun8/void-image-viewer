@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
       '下载 VoidImageViewer（Void Image Viewer）Windows 版——免费开源、SHA256 已验证。含安装版与便携版，支持 WebP、AVIF、HEIC、SVG、TIFF 等格式，无广告、无遥测。',
     path: '/download',
-    keywords: 'Void Image Viewer 下载, 图片查看器下载, 便携版图片查看器, Windows 图片查看器下载, 免费图片查看器',
+    keywords: 'VoidImageViewer 下载, Void Image Viewer 下载, 图片查看器下载, 便携版下载, Windows 看图软件下载',
   }),
 }
 
