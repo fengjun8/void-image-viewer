@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'Supported Image Formats',
+    title: 'Supported Image Formats - Open WebP, AVIF, HEIC & More',
     description:
-      'Every image format Void Image Viewer opens on Windows: WebP, AVIF, HEIC, JPEG XL, SVG, TIFF, RAW and more. Preview any format online for free.',
+      'All image formats VoidImageViewer opens on Windows: WebP, AVIF, HEIC, JPEG XL, SVG, TIFF, RAW, PNG, JPEG, GIF and more. Preview any format online for free - no install required.',
     path: '/supported-formats',
   }),
 }

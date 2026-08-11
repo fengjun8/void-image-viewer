@@ -15,11 +15,15 @@ export async function generateMetadata({
   const { format } = await params
   const fmt = getFormat(format)
   if (!fmt) return { title: APP.name }
-  const title = `Open ${fmt.name} Files Free — ${fmt.name} Viewer`
-  const rawDesc = [pick(fmt.tagline, 'en'), pick(fmt.intro, 'en')].join(' ').trim()
+  const title = `Open ${fmt.name} Files Free - ${fmt.name} Viewer for Windows`
+  const rawDesc = [
+    pick(fmt.tagline, 'en'),
+    `VoidImageViewer (Void Image Viewer) opens ${fmt.name} files natively on Windows - free and open source.`,
+    pick(fmt.intro, 'en'),
+  ].join(' ').trim()
   const description =
-    rawDesc.length > 155
-      ? `${rawDesc.slice(0, 152).replace(/\s+\S*$/, '')}…`
+    rawDesc.length > 158
+      ? `${rawDesc.slice(0, 155).replace(/\s+\S*$/, '')}…`
       : rawDesc
   return {
     ...pageMetadata({

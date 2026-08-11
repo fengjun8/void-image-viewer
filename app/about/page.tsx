@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'About',
+    title: 'About - VoidImageViewer Download Mirror & Resource',
     description:
-      'About this independent Void Image Viewer resource and download mirror. Not affiliated with the original authors; all binaries verified against official checksums.',
+      'About this independent VoidImageViewer (Void Image Viewer) resource and download mirror: binaries verified against official checksums, GitHub source links and project background. Not affiliated with the original authors.',
     path: '/about',
   }),
 }

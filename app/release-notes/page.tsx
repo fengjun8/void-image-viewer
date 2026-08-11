@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'Release Notes',
+    title: 'Release Notes - VoidImageViewer Version History',
     description:
-      'Full version history and changelog for Void Image Viewer. See what is new and fixed in every release.',
+      'Complete version history for VoidImageViewer (Void Image Viewer): every release, new features, bug fixes and improvements for the free open-source Windows image viewer.',
     path: '/release-notes',
   }),
 }

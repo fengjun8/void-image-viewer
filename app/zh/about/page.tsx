@@ -5,8 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'zh',
-    title: '关于',
-    description: '关于本 Void Image Viewer 独立资源站与下载镜像。与原始作者无关联；所有二进制文件均已对照官方校验值验证。',
+    title: '关于 - VoidImageViewer 镜像站与项目介绍',
+    description:
+      '关于本站：VoidImageViewer（Void Image Viewer）开源项目的独立资源站与下载镜像。所有二进制文件均对照官方校验值验证，附 GitHub 源码与项目背景。',
     path: '/about',
   }),
 }

@@ -15,11 +15,15 @@ export async function generateMetadata({
   const { format } = await params
   const fmt = getFormat(format)
   if (!fmt) return { title: APP.name }
-  const title = `免费打开 ${fmt.name} 文件 — ${fmt.name} 查看器`
-  const rawDesc = [pick(fmt.tagline, 'zh'), pick(fmt.intro, 'zh')].join(' ').trim()
+  const title = `免费打开 ${fmt.name} 文件 - ${fmt.name} Windows 查看器`
+  const rawDesc = [
+    pick(fmt.tagline, 'zh'),
+    `VoidImageViewer（Void Image Viewer）可在 Windows 上原生打开 ${fmt.name} 文件，免费开源。`,
+    pick(fmt.intro, 'zh'),
+  ].join(' ').trim()
   const description =
-    rawDesc.length > 155
-      ? `${rawDesc.slice(0, 152).replace(/\s+\S*$/, '')}…`
+    rawDesc.length > 158
+      ? `${rawDesc.slice(0, 155).replace(/\s+\S*$/, '')}…`
       : rawDesc
   return {
     ...pageMetadata({

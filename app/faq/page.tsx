@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'FAQ',
+    title: 'FAQ - Download & Install VoidImageViewer',
     description:
-      'Answers to common questions about downloading, installing, security, formats and using Void Image Viewer on Windows.',
+      'Frequently asked questions about VoidImageViewer (Void Image Viewer): download, installation, security and checksums, supported formats like WebP, AVIF and HEIC, the portable version and setting your default image viewer on Windows.',
     path: '/faq',
   }),
 }

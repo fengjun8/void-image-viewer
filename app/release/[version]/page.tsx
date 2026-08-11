@@ -18,8 +18,8 @@ export async function generateMetadata({
   return {
     ...pageMetadata({
       locale: 'en',
-      title: `v${rel.version} Release Notes`,
-      description: pick(rel.summary, 'en'),
+      title: `v${rel.version} Release Notes - New Features & Fixes`,
+      description: `${pick(rel.summary, 'en')} Download VoidImageViewer for Windows - free and open source.`,
       path: `/release/${rel.slug}`,
     }),
   }

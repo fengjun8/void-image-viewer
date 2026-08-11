@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'Screenshots',
+    title: 'Screenshots - VoidImageViewer Interface Preview',
     description:
-      'See the clean, distraction-free interface of Void Image Viewer: main viewer, thumbnails, info panel, animation playback, fullscreen and themes.',
+      'See VoidImageViewer in action: clean main viewer, instant folder thumbnails, format info panel, animated GIF/WebP playback, fullscreen mode and dark/light themes. Free open-source image viewer for Windows.',
     path: '/screenshots',
   }),
 }

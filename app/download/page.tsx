@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     locale: 'en',
     title: 'Download VoidImageViewer for Windows - Free & Portable',
     description:
-      'Download the latest Void Image Viewer for Windows. SHA256-verified, virus-free, MIT licensed. Includes a portable no-install version.',
+      'Download VoidImageViewer (Void Image Viewer) for Windows - free and open source, SHA256 verified. Portable and installer builds, plus WebP, AVIF, HEIC, SVG and more formats.',
     path: '/download',
     keywords:
       'void image viewer download, void image viewer portable, void image viewer windows 10, free image viewer download',

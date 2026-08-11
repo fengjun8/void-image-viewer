@@ -218,7 +218,7 @@ export const ui = {
       free: 'Free & open source',
     },
     download: {
-      title: 'Download Void Image Viewer for Windows',
+      title: 'Download VoidImageViewer for Windows',
       subtitle: 'Free, open-source and SHA256-verified. No ads, no sign-up, no telemetry.',
       trustSha: 'SHA256 checksum',
       trustVirus: 'VirusTotal scan',
@@ -406,7 +406,7 @@ export const ui = {
       free: '免费开源',
     },
     download: {
-      title: '下载 Void Image Viewer Windows 版',
+      title: '下载 VoidImageViewer Windows 版',
       subtitle: '免费、开源、SHA256 已验证。无广告、无需注册、无遥测。',
       trustSha: 'SHA256 校验值',
       trustVirus: 'VirusTotal 扫描',
