@@ -1,6 +1,6 @@
 {
-  "name": "My Awesome App",
-  "short_name": "AwesomeApp",
+  "name": "Void Image Viewer",
+  "short_name": "Void Image Viewer",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#06008b",
+  "background_color": "#f6f7fb",
   "display": "standalone"
 }

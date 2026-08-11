@@ -16,6 +16,8 @@ export function DownloadPage({ locale }: { locale: Locale }) {
     { label: d.trustSource, href: officialReleaseUrl, ext: true },
     { label: u.common.unofficial, href: localePath(locale, '/about'), ext: false },
   ]
+  const primaryAsset =
+    locale === 'zh' ? cnDownload : downloadAssets.find((a) => a.recommended) ?? downloadAssets[0]
 
   const sysReq = [
     { k: d.sysReqOs, v: 'Windows 10 / 11' },
@@ -33,9 +35,9 @@ export function DownloadPage({ locale }: { locale: Locale }) {
     softwareVersion: r.version,
     fileSize: `${r.sizeMb} MB`,
     datePublished: r.date,
-    downloadUrl: `${APP.baseUrl}${localePath(locale, '/download')}`,
+    downloadUrl: primaryAsset.url,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    license: APP.githubUrl,
+    license: 'https://opensource.org/licenses/MIT',
   }
   const faqLd = {
     '@context': 'https://schema.org',

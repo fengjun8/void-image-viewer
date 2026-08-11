@@ -5,12 +5,12 @@ import { PageHeader } from '@/components/page-header'
 import { ui, localePath, type Locale } from '@/lib/i18n'
 
 const shotImages = [
-  '/screenshots/main-viewer.png',
-  '/screenshots/thumbnails.png',
-  '/screenshots/info-panel.png',
-  '/screenshots/playback.png',
-  '/screenshots/fullscreen.png',
-  '/screenshots/themes.png',
+  '/screenshots/main-viewer.jpg',
+  '/screenshots/thumbnails.jpg',
+  '/screenshots/info-panel.jpg',
+  '/screenshots/playback.jpg',
+  '/screenshots/fullscreen.jpg',
+  '/screenshots/themes.jpg',
 ]
 
 export function ScreenshotsPage({ locale }: { locale: Locale }) {

@@ -1,0 +1,12 @@
+import { NextResponse, type NextRequest } from 'next/server'
+
+export function proxy(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers)
+  // Forward the pathname so the root layout can set the correct <html lang>.
+  requestHeaders.set('x-pathname', request.nextUrl.pathname)
+  return NextResponse.next({ request: { headers: requestHeaders } })
+}
+
+export const config = {
+  matcher: ['/((?!_next/static|_next/image|.*\\..*).*)'],
+}

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 import { Space_Grotesk, Inter, JetBrains_Mono, Noto_Sans_SC } from 'next/font/google'
 import './globals.css'
 
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     alternateLocale: ['zh_CN'],
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image-1200x630.png',
         width: 1200,
         height: 630,
         alt: 'Void Image Viewer — free open-source image viewer for Windows',
@@ -78,15 +79,10 @@ export const metadata: Metadata = {
     site: '@VoidimageViewer',
     title: 'Void Image Viewer — Free Open Source Image Viewer for Windows',
     description: 'Lightweight, fast, open-source image viewer for Windows.',
-    images: ['/og-image.png'],
+    images: ['/og-image-1200x630.png'],
   },
   alternates: {
     canonical: 'https://voidimageviewer.com',
-    languages: {
-      'en-US': 'https://voidimageviewer.com',
-      'zh-CN': 'https://voidimageviewer.com/zh',
-      'x-default': 'https://voidimageviewer.com',
-    },
   },
 }
 
@@ -100,14 +96,18 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const headerList = await headers()
+  const pathname = headerList.get('x-pathname') ?? ''
+  const lang = pathname.startsWith('/zh') ? 'zh' : 'en'
+
   return (
     <html
-      lang="en"
+      lang={lang}
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${notoSansSC.variable} bg-[--background]`}
     >
       <head>
@@ -117,40 +117,6 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@graph': [
-                {
-                  '@type': 'SoftwareApplication',
-                  '@id': 'https://voidimageviewer.com/#software',
-                  name: 'Void Image Viewer',
-                  applicationCategory: 'MultimediaApplication',
-                  applicationSubCategory: 'Image Viewer',
-                  operatingSystem: 'Windows 10, Windows 11',
-                  softwareVersion: '1.0.0.15',
-                  datePublished: '2026-01-12',
-                  downloadUrl: 'https://voidimageviewer.com/download',
-                  installUrl: 'https://voidimageviewer.com/download',
-                  fileSize: '268KB',
-                  softwareRequirements: 'Windows 10 or Windows 11 (64-bit)',
-                  license: 'https://opensource.org/licenses/MIT',
-                  isAccessibleForFree: true,
-                  url: 'https://voidimageviewer.com',
-                  image: 'https://voidimageviewer.com/og-image.png',
-                  screenshot: 'https://voidimageviewer.com/og-image.png',
-                  description:
-                    'A lightweight, open-source image viewer for Windows supporting PNG, JPEG, WebP, AVIF, HEIC, SVG, GIF, TIFF and more.',
-                  featureList: [
-                    'Opens PNG, JPEG, GIF, BMP, TIFF, WebP, AVIF, HEIC, SVG, ICO and JPEG XL',
-                    'Animated GIF and WebP playback',
-                    'Lightweight and fast with no ads or telemetry',
-                    'Portable no-install version available',
-                    'Free and open source (MIT licensed)',
-                  ],
-                  offers: {
-                    '@type': 'Offer',
-                    price: '0',
-                    priceCurrency: 'USD',
-                  },
-                  publisher: { '@id': 'https://voidimageviewer.com/#org' },
-                },
                 {
                   '@type': 'WebSite',
                   '@id': 'https://voidimageviewer.com/#website',
@@ -166,7 +132,7 @@ export default function RootLayout({
                   '@id': 'https://voidimageviewer.com/#org',
                   name: 'Void Image Viewer',
                   url: 'https://voidimageviewer.com',
-                  logo: 'https://voidimageviewer.com/og-image.png',
+                  logo: 'https://voidimageviewer.com/logo-icon.png',
                 },
               ],
             }),

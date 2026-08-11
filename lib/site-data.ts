@@ -19,6 +19,7 @@ export const APP = {
 
 export const RELEASE_TAG = '1.0.0.15'
 const GH_DL = `https://github.com/voidtools/voidImageViewer/releases/download/${RELEASE_TAG}`
+const GH_RELEASES = 'https://github.com/voidtools/voidImageViewer/releases'
 
 export interface DownloadAsset {
   id: string
@@ -121,8 +122,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_DL}/voidImageViewer-1.0.0.15.x64.en-US-Setup.exe`,
+    zipUrl: `${GH_DL}/voidImageViewer-1.0.0.15.x64.en-US.zip`,
     latest: true,
     summary: {
       en: 'Fixes scrolling of large images and improves numpad-key position offset.',
@@ -140,8 +141,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.14`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.14`,
     summary: {
       en: 'Several WebP and rendering fixes, plus new title bar format and orientation settings.',
       zh: '多项 WebP 与渲染修复，并新增标题栏格式和方向设置。',
@@ -167,8 +168,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.13`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.13`,
     summary: {
       en: 'Fixes image centering and toolbar navigation, adds move-window and auto-size options.',
       zh: '修复图片居中与工具栏导航，新增移动窗口和自动调整窗口大小选项。',
@@ -189,8 +190,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.12`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.12`,
     summary: {
       en: 'Fixes GDI leaks and next-image loading after sorting, adds natural sort.',
       zh: '修复 GDI 泄漏及排序后加载下一张图片的问题，新增自然排序。',
@@ -209,8 +210,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.11`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.11`,
     summary: {
       en: 'Multiple fixes for associations, rotation and view state, plus preloading improvements.',
       zh: '修复文件关联、旋转和视图状态等多项问题，并改进预加载。',
@@ -233,8 +234,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.10`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.10`,
     summary: {
       en: 'Reduces WebP memory usage.',
       zh: '降低 WebP 内存占用。',
@@ -250,8 +251,8 @@ export const releases: Release[] = [
     sizeMb: '1.1',
     sha256: '—',
     sha256Full: '—',
-    exeUrl: '#download-exe',
-    zipUrl: '#download-zip',
+    exeUrl: `${GH_RELEASES}/tag/1.0.0.9`,
+    zipUrl: `${GH_RELEASES}/tag/1.0.0.9`,
     summary: {
       en: 'Adds WebP and animated WebP support, mipmaps, preloading and copy options.',
       zh: '新增 WebP 与 WebP 动图支持、mipmap、预加载以及复制选项。',
@@ -351,7 +352,7 @@ export const formatList: FormatInfo[] = [
     },
     intro: {
       en: 'AVIF (AV1 Image File Format) is a next-generation image format based on the AV1 video codec. It delivers dramatically smaller files than JPEG and WebP at the same quality, with support for HDR, wide color gamut, transparency and animation. It is quickly becoming the format of choice for high-efficiency web images.',
-      zh: 'AVIF（AV1 图像文件格式）是基于 AV1 视频编解码器的��一代图片格式。在相同质量下，它比 JPEG 和 WebP 的体积小得多，并支持 HDR、广色域、透明通道和动画，正迅速成为高效网页图片的首选格式。',
+      zh: 'AVIF（AV1 图像文件格式）是基于 AV1 视频编解码器的下一代图片格式。在相同质量下，它比 JPEG 和 WebP 的体积小得多，并支持 HDR、广色域、透明通道和动画，正迅速成为高效网页图片的首选格式。',
     },
     support: { chrome: true, safari: true, firefox: true, windowsExplorer: false },
     related: ['webp', 'heic', 'jxl'],

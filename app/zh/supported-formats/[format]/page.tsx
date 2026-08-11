@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FormatDetailPage } from '@/components/pages/format-detail-page'
 import { APP, formatList, getFormat, pick } from '@/lib/site-data'
+import { pageMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
   return formatList.map((f) => ({ format: f.slug }))
@@ -14,19 +15,20 @@ export async function generateMetadata({
   const { format } = await params
   const fmt = getFormat(format)
   if (!fmt) return { title: APP.name }
-  const title = `免费打开 ${fmt.name} 文件 — ${fmt.name} 查看器 | ${APP.name}`
-  const description = pick(fmt.tagline, 'zh')
+  const title = `免费打开 ${fmt.name} 文件 — ${fmt.name} 查看器`
+  const rawDesc = [pick(fmt.tagline, 'zh'), pick(fmt.intro, 'zh')].join(' ').trim()
+  const description =
+    rawDesc.length > 155
+      ? `${rawDesc.slice(0, 152).replace(/\s+\S*$/, '')}…`
+      : rawDesc
   return {
-    title,
-    description,
-    alternates: {
-      canonical: `/zh/supported-formats/${fmt.slug}`,
-      languages: {
-        en: `/supported-formats/${fmt.slug}`,
-        zh: `/zh/supported-formats/${fmt.slug}`,
-      },
-    },
-    openGraph: { title, description, type: 'article' },
+    ...pageMetadata({
+      locale: 'zh',
+      title,
+      description,
+      path: `/supported-formats/${fmt.slug}`,
+      type: 'article',
+    }),
   }
 }
 

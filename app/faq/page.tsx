@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import { FaqPage } from '@/components/pages/faq-page'
-import { APP } from '@/lib/site-data'
+import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: `FAQ — ${APP.name}`,
-  description: 'Answers to common questions about downloading, installing, security, formats and using Void Image Viewer on Windows.',
-  alternates: {
-    canonical: '/faq',
-    languages: { en: '/faq', zh: '/zh/faq' },
-  },
+  ...pageMetadata({
+    locale: 'en',
+    title: 'FAQ',
+    description:
+      'Answers to common questions about downloading, installing, security, formats and using Void Image Viewer on Windows.',
+    path: '/faq',
+  }),
 }
 
 export default function Page() {

@@ -45,7 +45,7 @@ export function Hero({ locale }: HeroProps) {
 
       <style>{`
         .hero-bg {
-          background-image: url('/hero-bg.png');
+          background-image: url('/hero-bg.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;

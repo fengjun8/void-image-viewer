@@ -9,18 +9,18 @@ import { FaqSection } from '@/components/faq-section'
 import { SiteFooter } from '@/components/site-footer'
 import { BackToTop } from '@/components/back-to-top'
 import { ui } from '@/lib/i18n'
+import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'VoidimageViewer下载 - Void Image Viewer中文汉化版 — 免费开源 Windows 图片查看器',
-  description: '下载最新版 Void Image Viewer。轻量、快速的 Windows 开源图片查看器，支持 PNG、JPEG、GIF、WebP、AVIF、SVG、HEIC、TIFF 等格式，完全免费，MIT 授权。',
-  keywords: 'Void Image Viewer, 图片查看器, Windows 图片查看器, 免费图片查看器, 开源图片查看器, WebP 查看器, AVIF 查看器',
-  alternates: {
-    canonical: 'https://voidimageviewer.com/zh',
-    languages: {
-      'en': 'https://voidimageviewer.com',
-      'zh': 'https://voidimageviewer.com/zh',
-    },
-  },
+  ...pageMetadata({
+    locale: 'zh',
+    title: 'VoidimageViewer下载 - Void Image Viewer中文汉化版 免费开源 Windows 图片查看器',
+    description:
+      '下载最新版 Void Image Viewer。轻量、快速的 Windows 开源图片查看器，支持 PNG、JPEG、GIF、WebP、AVIF、SVG、HEIC、TIFF 等格式，完全免费，MIT 授权。',
+    path: '/',
+    keywords:
+      'VoidimageViewer, Void Image Viewer, 图片查看器, Windows 图片查看器, 免费图片查看器, 开源图片查看器, WebP 查看器, AVIF 查看器',
+  }),
 }
 
 export default function ZhPage() {

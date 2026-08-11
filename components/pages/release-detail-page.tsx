@@ -123,10 +123,10 @@ export function ReleaseDetailPage({ locale, slug }: { locale: Locale; slug: stri
               </span>
             </div>
             <div className="flex flex-col gap-2.5 mb-5">
-              <a href={rel.exeUrl} className="btn-v-primary w-full">
+              <a href={rel.exeUrl} target="_blank" rel="noopener noreferrer" className="btn-v-primary w-full">
                 {c.downloadExe}
               </a>
-              <a href={rel.zipUrl} className="btn-v-ghost w-full">
+              <a href={rel.zipUrl} target="_blank" rel="noopener noreferrer" className="btn-v-ghost w-full">
                 {c.downloadZip}
               </a>
             </div>
@@ -134,7 +134,19 @@ export function ReleaseDetailPage({ locale, slug }: { locale: Locale; slug: stri
               <span className="font-mono text-[10.5px] tracking-[0.05em] block mb-1.5" style={{ color: 'var(--muted)' }}>
                 SHA256
               </span>
-              <CopyText value={rel.sha256Full} display={rel.sha256} label={c.copy} copiedLabel={c.copied} />
+              {rel.sha256Full === '—' ? (
+                <a
+                  href={`${APP.githubUrl}/releases/tag/${rel.version}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-[12px] inline-block mt-1"
+                  style={{ color: 'var(--violet)' }}
+                >
+                  {locale === 'zh' ? '在 GitHub 查看校验值 →' : 'View checksums on GitHub →'}
+                </a>
+              ) : (
+                <CopyText value={rel.sha256Full} display={rel.sha256} label={c.copy} copiedLabel={c.copied} />
+              )}
             </div>
             <Link
               href={localePath(locale, '/release-notes')}

@@ -149,7 +149,7 @@ export const translations = {
       tag: '// 功能特性',
       h2: '该有的都有，不该有的一个没有。',
       cards: [
-        { title: '极速加载', body: '支持 2 亿像素���上的超����分辨率图片，不卡顿。' },
+        { title: '极速加载', body: '支持 2 亿像素以上的超高分辨率图片，不卡顿。' },
         { title: '动图播放', body: '完整支持 GIF 和 WebP 动图，可暂停、逐帧步进。' },
         { title: '缩放 / 旋转 / 全屏', body: '所有操作均配有快捷键，无需记忆复杂命令。' },
         { title: '现代编解码', body: '原生解码 AVIF 和 JPEG XL，领先 Windows 照片多年。' },
@@ -266,7 +266,7 @@ export const ui = {
       faqTitle: 'Download & install FAQ',
       faq: [
         { q: 'My antivirus flags the download — is it safe?', a: 'Void is open source and unsigned by some AV heuristics, which can trigger false positives. Verify the SHA256 checksum below and cross-check the VirusTotal report. You can also build from source on GitHub.' },
-        { q: 'Does it run on 32-bit Windows?', a: 'The current builds are 64-bit only. The last 32-bit compatible release was v2.2.x, available in the previous versions list.' },
+        { q: 'Does it run on 32-bit Windows?', a: 'The current builds are 64-bit only. Older 32-bit releases are not hosted on this mirror — get them from the official GitHub releases page.' },
         { q: 'Where can I download older versions?', a: 'Every past release is listed under Previous versions with its own installer, portable build and checksum.' },
       ],
     },
@@ -454,7 +454,7 @@ export const ui = {
       faqTitle: '下载与安装常见问题',
       faq: [
         { q: '杀毒软件报毒，安全吗？', a: 'Void 是开源软件，部分杀毒引擎的启发式检测可能产生误报。请核对下方的 SHA256 校验值并对照 VirusTotal 报告，你也可以从 GitHub 自行编译源码。' },
-        { q: '支持 32 位 Windows 吗？', a: '当前版���仅支持 64 位。最后一个兼容 32 位的版本是 v2.2.x，可在历史版本列表中找到。' },
+        { q: '支持 32 位 Windows 吗？', a: '当前版本仅支持 64 位。本站镜像未托管旧版 32 位安装包，请前往官方 GitHub Releases 页面下载。' },
         { q: '在哪里下载旧版本？', a: '所有历史版本都列在"历史版本"中，附带各自的安装程序、便携版和校验值。' },
       ],
     },

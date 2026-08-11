@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ReleaseDetailPage } from '@/components/pages/release-detail-page'
 import { APP, releases, getRelease, pick } from '@/lib/site-data'
+import { pageMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
   return releases.map((r) => ({ version: r.slug }))
@@ -14,15 +15,13 @@ export async function generateMetadata({
   const { version } = await params
   const rel = getRelease(version)
   if (!rel) return { title: APP.name }
-  const title = `${APP.name} v${rel.version} — 更新日志`
-  const description = pick(rel.summary, 'zh')
   return {
-    title,
-    description,
-    alternates: {
-      canonical: `/zh/release/${rel.slug}`,
-      languages: { en: `/release/${rel.slug}`, zh: `/zh/release/${rel.slug}` },
-    },
+    ...pageMetadata({
+      locale: 'zh',
+      title: `v${rel.version} 更新日志`,
+      description: pick(rel.summary, 'zh'),
+      path: `/release/${rel.slug}`,
+    }),
   }
 }
 

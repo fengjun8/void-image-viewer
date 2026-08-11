@@ -9,17 +9,18 @@ import { FaqSection } from '@/components/faq-section'
 import { SiteFooter } from '@/components/site-footer'
 import { BackToTop } from '@/components/back-to-top'
 import { ui } from '@/lib/i18n'
+import { pageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'VoidimageViewer download - Void Image Viewer Free Open Source Image Viewer',
-  description: 'Download the latest Void Image Viewer for Windows. A lightweight open-source image viewer supporting PNG, JPEG, GIF, WebP, AVIF, SVG, HEIC, TIFF and more. Free forever, MIT licensed.',
-  alternates: {
-    canonical: 'https://voidimageviewer.com',
-    languages: {
-      en: 'https://voidimageviewer.com',
-      zh: 'https://voidimageviewer.com/zh',
-    },
-  },
+  ...pageMetadata({
+    locale: 'en',
+    title: 'VoidimageViewer - Void Image Viewer Free Download for Windows',
+    description:
+      'Download Void Image Viewer for Windows — a free, lightweight open-source image viewer. Supports PNG, JPEG, GIF, WebP, AVIF, HEIC, SVG, TIFF and more. MIT licensed.',
+    path: '/',
+    keywords:
+      'VoidimageViewer, Void Image Viewer, image viewer, Windows image viewer, free image viewer, open source image viewer, WebP viewer, AVIF viewer, HEIC viewer',
+  }),
 }
 
 export default function HomePage() {

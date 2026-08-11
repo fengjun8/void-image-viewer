@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { APP, formatList, releases } from '@/lib/site-data'
+import { APP, formatList, releases, getRelease } from '@/lib/site-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = APP.baseUrl
@@ -20,23 +20,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const releasePaths = releases.map((r) => `/release/${r.slug}`)
   const allPaths = [...staticPaths, ...formatPaths, ...releasePaths]
 
-  const now = new Date()
+  const latestDate = releases.find((r) => r.latest)?.date ?? new Date().toISOString().split('T')[0]
 
   return allPaths.flatMap((path) => {
     const enUrl = `${base}${path}`
     const zhUrl = `${base}/zh${path}`
     const priority = path === '' ? 1 : path.startsWith('/download') ? 0.9 : 0.7
+    const rel = path.startsWith('/release/') ? getRelease(path.slice('/release/'.length)) : undefined
+    const lastModified = rel?.date ?? latestDate
     return [
       {
         url: enUrl,
-        lastModified: now,
+        lastModified,
         changeFrequency: 'weekly' as const,
         priority,
         alternates: { languages: { en: enUrl, zh: zhUrl } },
       },
       {
         url: zhUrl,
-        lastModified: now,
+        lastModified,
         changeFrequency: 'weekly' as const,
         priority: priority * 0.9,
         alternates: { languages: { en: enUrl, zh: zhUrl } },
