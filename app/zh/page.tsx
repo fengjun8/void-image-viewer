@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     keywords:
       'VoidimageViewer, Void Image Viewer, 图片查看器下载, Windows 图片查看器, 免费看图软件, 开源图片查看器',
   }),
+  // 首页 title 不加站点后缀（与英文首页一致）
+  title: {
+    absolute: 'VoidimageViewer下载 - Void Image Viewer中文汉化版 免费开源 Windows 图片查看器',
+  },
 }
 
 export default function ZhPage() {

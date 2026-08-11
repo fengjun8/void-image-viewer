@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { format } = await params
   const fmt = getFormat(format)
   if (!fmt) return { title: APP.name }
-  const title = `Open ${fmt.name} Files Free - ${fmt.name} Viewer for Windows`
+  const title = `VoidImageViewer ${fmt.name} Viewer - Open ${fmt.name} Files on Windows`
   const rawDesc = [
     pick(fmt.tagline, 'en'),
     `VoidImageViewer (Void Image Viewer) opens ${fmt.name} files natively on Windows - free and open source.`,

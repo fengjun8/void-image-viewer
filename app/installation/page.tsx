@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'en',
-    title: 'Installation Guide - Set Void Image Viewer as Default on Windows',
+    title: 'VoidImageViewer Installation - Set as Default Image Viewer on Windows',
     description:
       'Step-by-step guide to install VoidImageViewer (Void Image Viewer) on Windows 10/11 and set it as your default image viewer. Covers the installer, portable version and troubleshooting.',
     path: '/installation',

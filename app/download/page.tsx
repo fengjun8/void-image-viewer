@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     keywords:
       'VoidImageViewer download, download Void Image Viewer, free image viewer download Windows, portable image viewer, image viewer installer',
   }),
+  // 下载页 title 保持原样（后缀 VoidImageViewer），不受全局模板影响
+  title: {
+    absolute: 'Download VoidImageViewer for Windows - Free & Portable | VoidImageViewer',
+  },
 }
 
 export default function Page() {
