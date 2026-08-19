@@ -24,7 +24,7 @@ export interface PageSeoOptions {
 
 /**
  * Builds page-level metadata with correct per-locale canonicals, hreflang
- * (en/zh + x-default), Open Graph and Twitter cards.
+ * (en/zh), Open Graph and Twitter cards.
  */
 export function pageMetadata({
   locale,
@@ -47,7 +47,6 @@ export function pageMetadata({
       languages: {
         en: pageUrl('en', path),
         zh: pageUrl('zh', path),
-        'x-default': `${APP.baseUrl}`,
       },
     },
     openGraph: {

@@ -16,11 +16,20 @@ export function InstallationPage({ locale }: { locale: Locale }) {
     step: [
       ...u.download.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.t, text: s.d })),
     ],
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, '/installation')}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={howToLd} />
+      <JsonLd data={[webPageLd, howToLd]} />
       <PageHeader
         crumbs={[
           { label: u.common.home, href: localePath(locale, '/') },

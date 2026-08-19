@@ -19,10 +19,13 @@ export const translations = {
       lang: 'EN',
       langAlt: '中文',
       langUrl: '/zh',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      skipToContent: 'Skip to main content',
     },
     hero: {
       eyebrow: 'MIT LICENSED · OPEN SOURCE',
-      h1: 'VoidimageViewer — A void where every image format opens instantly.',
+      h1: 'VoidImageViewer — A void where every image format opens instantly.',
       lead: 'Void Image Viewer — A lightweight, open-source image viewer for Windows. View PNG, WebP, AVIF, HEIC, SVG, TIFF and more — no bloat, no ads, no sign-up.',
       cta1: 'Download Free Now',
       cta2: 'Try format preview',
@@ -115,10 +118,13 @@ export const translations = {
       lang: '中文',
       langAlt: 'EN',
       langUrl: '/',
+      openMenu: '打开菜单',
+      closeMenu: '关闭菜单',
+      skipToContent: '跳到主要内容',
     },
     hero: {
       eyebrow: 'MIT 开源授权 · 完全免费',
-      h1: 'VoidimageViewer — 轻盈如空，瞬间打开每一种图片格式。',
+      h1: 'VoidImageViewer — 轻盈如空，瞬间打开每一种图片格式。',
       lead: 'Void Image Viewer — Windows 轻量级开源图片查看器。支持 PNG、WebP、AVIF、HEIC、SVG、TIFF 等数十种格式，无广告、无需注册。',
       cta1: '立即免费下载',
       cta2: '在线预览格式',
@@ -390,6 +396,42 @@ export const ui = {
       resources: 'Resources',
       formats: 'Formats',
     },
+    privacy: {
+      title: 'Privacy Policy',
+      subtitle: 'What this site does — and does not do — with your data.',
+      updated: 'Last updated',
+      sections: [
+        {
+          t: 'The software',
+          b: 'Void Image Viewer itself makes no network requests of any kind. There is no telemetry, no analytics and no data collection inside the application.',
+        },
+        {
+          t: 'This website',
+          b: 'This is an independent resource site. We do not require accounts and we do not collect names, email addresses or any personal information.',
+        },
+        {
+          t: 'Analytics cookies',
+          b: 'This site uses Google Analytics to understand aggregate visitor statistics (pages viewed, country, device type). You can block these cookies in your browser settings or use a tracker blocker without affecting any functionality of this site.',
+        },
+        {
+          t: 'Browser preview tool',
+          b: 'The online format preview processes your image entirely inside your browser. Files are never uploaded to any server.',
+        },
+        {
+          t: 'External links',
+          b: 'Downloads are served from GitHub, which has its own privacy policy. Links to external sites are marked and open in a new tab.',
+        },
+      ],
+    },
+    contact: {
+      title: 'Contact',
+      subtitle: 'How to reach this site and the upstream project.',
+      mirrorTitle: 'About this site',
+      mirrorBody: 'For issues with this website — broken download links, incorrect information or takedown requests — please open an issue on the GitHub repository that hosts this mirror.',
+      softwareTitle: 'About the software',
+      softwareBody: 'For bug reports, feature requests or questions about Void Image Viewer itself, please contact the upstream project through its official channels. This site is an independent mirror and cannot fix software bugs.',
+      linksTitle: 'Useful links',
+    },
   },
   zh: {
     common: {
@@ -578,6 +620,42 @@ export const ui = {
       resources: '资源',
       formats: '格式',
     },
+    privacy: {
+      title: '隐私政策',
+      subtitle: '本站对数据做了什么、没做什么。',
+      updated: '最后更新',
+      sections: [
+        {
+          t: '软件本身',
+          b: 'Void Image Viewer 软件不会发起任何网络请求，没有遥测、没有统计分析、没有任何数据收集。',
+        },
+        {
+          t: '本网站',
+          b: '本站是独立的资源站。我们不需要注册账号，也不收集姓名、邮箱等任何个人信息。',
+        },
+        {
+          t: '统计 Cookie',
+          b: '本站使用 Google Analytics 统计聚合访问数据（访问页面、国家/地区、设备类型）。你可以在浏览器设置中屏蔽这些 Cookie，或使用广告拦截插件，不会影响本站任何功能。',
+        },
+        {
+          t: '浏览器预览工具',
+          b: '在线格式预览完全在你的浏览器内处理图片，文件不会上传到任何服务器。',
+        },
+        {
+          t: '外部链接',
+          b: '下载文件由 GitHub 提供，其拥有独立的隐私政策。指向外部站点的链接均已标注，并在新标签页打开。',
+        },
+      ],
+    },
+    contact: {
+      title: '联系我们',
+      subtitle: '如何联系本站与上游项目。',
+      mirrorTitle: '关于本站',
+      mirrorBody: '如遇本站相关问题——下载链接失效、信息有误或内容下架请求——请在托管本镜像站的 GitHub 仓库提交 issue。',
+      softwareTitle: '关于软件',
+      softwareBody: '如需报告 Bug、提出功能需求或咨询 Void Image Viewer 软件本身的问题，请通过上游项目的官方渠道联系。本站为独立镜像站，无法修复软件缺陷。',
+      linksTitle: '实用链接',
+    },
   },
 } as const
 
@@ -588,10 +666,4 @@ export const releaseInfo = {
   date: '2026-01-12',
   sizeMb: '1.1',
   license: 'MIT',
-  sha256: '—',
-  exeUrl: '#',
-  zipUrl: '#',
-  githubUrl: 'https://github.com',
-  allVersionsUrl: '#',
-  verifyUrl: '#',
 }

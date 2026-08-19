@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/page-header'
 import { FaqSection } from '@/components/faq-section'
 import { JsonLd } from '@/components/json-ld'
 import { translations, ui, localePath, type Locale } from '@/lib/i18n'
+import { APP } from '@/lib/site-data'
 
 export function FaqPage({ locale }: { locale: Locale }) {
   const t = ui[locale].faqPage
@@ -18,11 +19,20 @@ export function FaqPage({ locale }: { locale: Locale }) {
       name: it.q,
       acceptedAnswer: { '@type': 'Answer', text: it.a },
     })),
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, '/faq')}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={faqLd} />
+      <JsonLd data={[webPageLd, faqLd]} />
       <PageHeader
         crumbs={[
           { label: c.home, href: localePath(locale, '/') },

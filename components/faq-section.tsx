@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { translations, type Locale } from '@/lib/i18n'
 
 interface FaqSectionProps {
@@ -10,6 +10,7 @@ interface FaqSectionProps {
 export function FaqSection({ locale }: FaqSectionProps) {
   const t = translations[locale].faq
   const [openIndex, setOpenIndex] = useState<number>(0)
+  const uid = useId()
 
   return (
     <section id="faq" className="py-20">
@@ -35,9 +36,11 @@ export function FaqSection({ locale }: FaqSectionProps) {
                 style={{ borderBottom: '1px solid var(--border)' }}
               >
                 <button
+                  id={`faq-btn-${uid}-${i}`}
                   className="w-full flex justify-between items-center py-5 text-left text-[15px] font-medium cursor-pointer transition-colors hover:text-[--violet]"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${uid}-${i}`}
                 >
                   <span>{item.q}</span>
                   <span
@@ -51,6 +54,9 @@ export function FaqSection({ locale }: FaqSectionProps) {
                   </span>
                 </button>
                 <div
+                  id={`faq-panel-${uid}-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-btn-${uid}-${i}`}
                   className="overflow-hidden transition-all duration-250"
                   style={{ maxHeight: isOpen ? '160px' : '0' }}
                 >

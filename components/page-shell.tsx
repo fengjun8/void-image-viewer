@@ -11,7 +11,7 @@ interface PageShellProps {
 
 export function PageShell({ locale, children }: PageShellProps) {
   return (
-    <main lang={locale}>
+    <main id="main-content" lang={locale}>
       <Nav locale={locale} />
       {children}
       <SiteFooter locale={locale} />

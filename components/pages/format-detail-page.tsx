@@ -6,7 +6,7 @@ import { PreviewTool } from '@/components/preview-tool'
 import { FaqAccordion } from '@/components/faq-accordion'
 import { JsonLd } from '@/components/json-ld'
 import { ui, localePath, type Locale } from '@/lib/i18n'
-import { getFormat, formatList, pick } from '@/lib/site-data'
+import { APP, getFormat, formatList, pick } from '@/lib/site-data'
 
 function supportEntries(support: { chrome: boolean; safari: boolean; firefox: boolean; windowsExplorer: boolean }) {
   return [
@@ -37,12 +37,21 @@ export function FormatDetailPage({ locale, slug }: { locale: Locale; slug: strin
           name: f.q,
           acceptedAnswer: { '@type': 'Answer', text: f.a },
         })),
+        isPartOf: { '@id': `${APP.baseUrl}/#website` },
       }
     : null
 
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, `/supported-formats/${slug}`)}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
   return (
     <PageShell locale={locale}>
-      {faqLd && <JsonLd data={faqLd} />}
+      {faqLd ? <JsonLd data={[webPageLd, faqLd]} /> : <JsonLd data={webPageLd} />}
       <PageHeader
         crumbs={[
           { label: c.home, href: localePath(locale, '/') },

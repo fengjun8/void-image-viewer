@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main lang="en">
+    <main id="main-content" lang="en">
       <Nav locale="en" />
 
       <section className="min-h-[60vh] flex items-center justify-center py-24">

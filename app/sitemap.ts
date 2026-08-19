@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/faq',
     '/release-notes',
     '/about',
+    '/privacy',
+    '/contact',
   ]
 
   const formatPaths = formatList.map((f) => `/supported-formats/${f.slug}`)

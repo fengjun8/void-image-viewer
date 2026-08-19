@@ -1,12 +1,12 @@
 import { translations, type Locale } from '@/lib/i18n'
 
 const featureIcons = [
-  <svg key="fast" viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>,
-  <svg key="gif" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M4 4h16v16H4z"/><path d="M4 15l4-4 4 4 8-8"/></svg>,
-  <svg key="zoom" viewBox="0 0 24 24" fill="none" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>,
-  <svg key="codec" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg>,
-  <svg key="default" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 21h16"/></svg>,
-  <svg key="portable" viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>,
+  <svg key="fast" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>,
+  <svg key="gif" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M4 4h16v16H4z"/><path d="M4 15l4-4 4 4 8-8"/></svg>,
+  <svg key="zoom" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>,
+  <svg key="codec" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg>,
+  <svg key="default" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 3v12M6 9l6 6 6-6"/><path d="M4 21h16"/></svg>,
+  <svg key="portable" aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>,
 ]
 
 interface FeaturesSectionProps {

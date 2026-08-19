@@ -2,7 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PageShell } from '@/components/page-shell'
 import { PageHeader } from '@/components/page-header'
+import { JsonLd } from '@/components/json-ld'
 import { ui, localePath, type Locale } from '@/lib/i18n'
+import { APP } from '@/lib/site-data'
 
 const shotImages = [
   '/screenshots/main-viewer.jpg',
@@ -17,8 +19,27 @@ export function ScreenshotsPage({ locale }: { locale: Locale }) {
   const t = ui[locale].screenshots
   const c = ui[locale].common
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: `${APP.name} ${t.title}`,
+    description: t.subtitle,
+    url: `${APP.baseUrl}${localePath(locale, '/screenshots')}`,
+    image: shotImages.map((s) => `${APP.baseUrl}${s}`),
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, '/screenshots')}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
   return (
     <PageShell locale={locale}>
+      <JsonLd data={[webPageLd, jsonLd]} />
       <PageHeader
         crumbs={[
           { label: c.home, href: localePath(locale, '/') },

@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.voidimageviewer.com"
+        }
+      ],
+      "destination": "https://voidimageviewer.com/:path*",
+      "permanent": true
+    }
+  ]
+}

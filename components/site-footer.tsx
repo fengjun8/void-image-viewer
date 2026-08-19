@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { translations, ui, localePath, type Locale } from '@/lib/i18n'
 import { APP, highPriorityFormats } from '@/lib/site-data'
+import { LanguageSwitcher } from '@/components/language-switcher'
 
 interface SiteFooterProps {
   locale: Locale
@@ -62,8 +63,10 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           <div className="footer-bottom flex justify-between flex-wrap gap-4 items-center pt-6">
             <p className="footer-copy text-[12px]">{APP.baseUrl.replace('https://', '')} · Independent resource site</p>
             <div className="flex gap-5 text-[12.5px] footer-links">
-              <a href={APP.githubUrl} target="_blank" rel="noopener noreferrer">{t.github}</a>
-              {locale === 'en' ? <Link href="/zh">中文</Link> : <Link href="/">English</Link>}
+              <a href={APP.githubUrl} target="_blank" rel="nofollow noopener noreferrer">{t.github}</a>
+              <Link href={localePath(locale, '/privacy')}>{t.privacy}</Link>
+              <Link href={localePath(locale, '/contact')}>{t.contact}</Link>
+              <LanguageSwitcher locale={locale} variant="footer" />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ReleaseDetailPage } from '@/components/pages/release-detail-page'
-import { APP, releases, getRelease, pick } from '@/lib/site-data'
+import { APP, releases, getRelease } from '@/lib/site-data'
 import { pageMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
@@ -19,7 +19,7 @@ export async function generateMetadata({
     ...pageMetadata({
       locale: 'zh',
       title: `VoidImageViewer v${rel.version} - 更新日志与版本历史`,
-      description: `${pick(rel.summary, 'zh')} 下载 VoidImageViewer Windows 版——免费开源图片查看器。`,
+      description: `VoidImageViewer v${rel.version} 更新日志：查看该版本新增功能、问题修复与性能改进的完整变更记录，下载 SHA256 校验过的 Windows 安装版或便携版——免费开源、无广告的图片查看器。`,
       path: `/release/${rel.slug}`,
       keywords: `VoidImageViewer v${rel.version}, Void Image Viewer ${rel.version}, 更新日志, 版本历史`,
     }),

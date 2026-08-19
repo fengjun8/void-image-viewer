@@ -51,12 +51,22 @@ export function ReleaseDetailPage({ locale, slug }: { locale: Locale; slug: stri
     applicationCategory: 'MultimediaApplication',
     datePublished: rel.date,
     fileSize: `${rel.sizeMb} MB`,
+    downloadUrl: rel.exeUrl,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, `/release/${slug}`)}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={softwareLd} />
+      <JsonLd data={[webPageLd, softwareLd]} />
       <PageHeader
         crumbs={[
           { label: c.home, href: localePath(locale, '/') },
@@ -123,10 +133,10 @@ export function ReleaseDetailPage({ locale, slug }: { locale: Locale; slug: stri
               </span>
             </div>
             <div className="flex flex-col gap-2.5 mb-5">
-              <a href={rel.exeUrl} target="_blank" rel="noopener noreferrer" className="btn-v-primary w-full">
+              <a href={rel.exeUrl} target="_blank" rel="nofollow noopener noreferrer" className="btn-v-primary w-full">
                 {c.downloadExe}
               </a>
-              <a href={rel.zipUrl} target="_blank" rel="noopener noreferrer" className="btn-v-ghost w-full">
+              <a href={rel.zipUrl} target="_blank" rel="nofollow noopener noreferrer" className="btn-v-ghost w-full">
                 {c.downloadZip}
               </a>
             </div>
@@ -138,7 +148,7 @@ export function ReleaseDetailPage({ locale, slug }: { locale: Locale; slug: stri
                 <a
                   href={`${APP.githubUrl}/releases/tag/${rel.version}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="font-mono text-[12px] inline-block mt-1"
                   style={{ color: 'var(--violet)' }}
                 >

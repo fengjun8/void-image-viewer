@@ -16,12 +16,16 @@ export function AboutPage({ locale }: { locale: Locale }) {
   ]
 
   const dir = locale === 'zh' ? 'zh' : 'en'
-  const mainExt = locale === 'zh' ? 'png' : 'gif'
+  // Intrinsic sizes (from the compressed WebP/GIF assets) so the browser reserves space.
+  const dims =
+    locale === 'zh'
+      ? { main: { w: 720, h: 450 }, opt: { w: 720, h: 698 } }
+      : { main: { w: 502, h: 524 }, opt: { w: 467, h: 467 } }
   const shots = [
-    { src: `/readme/${dir}/main.${mainExt}`, ...t.shots[0] },
-    { src: `/readme/${dir}/general.png`, ...t.shots[1] },
-    { src: `/readme/${dir}/view.png`, ...t.shots[2] },
-    { src: `/readme/${dir}/controls.png`, ...t.shots[3] },
+    { src: `/readme/${dir}/main.${locale === 'zh' ? 'webp' : 'gif'}`, w: dims.main.w, h: dims.main.h, ...t.shots[0] },
+    { src: `/readme/${dir}/general.webp`, w: dims.opt.w, h: dims.opt.h, ...t.shots[1] },
+    { src: `/readme/${dir}/view.webp`, w: dims.opt.w, h: dims.opt.h, ...t.shots[2] },
+    { src: `/readme/${dir}/controls.webp`, w: dims.opt.w, h: dims.opt.h, ...t.shots[3] },
   ]
 
   return (
@@ -51,6 +55,8 @@ export function AboutPage({ locale }: { locale: Locale }) {
                     src={s.src || "/placeholder.svg"}
                     alt={`Void Image Viewer ${s.t} screenshot — ${s.d}`}
                     title={`Void Image Viewer — ${s.t}`}
+                    width={s.w}
+                    height={s.h}
                     className="max-w-full h-auto rounded"
                     loading="lazy"
                     decoding="async"
@@ -88,7 +94,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
                   key={l.label}
                   href={l.href}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="btn-v-ghost"
                 >
                   {l.label}

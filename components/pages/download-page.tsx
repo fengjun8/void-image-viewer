@@ -38,6 +38,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
     downloadUrl: primaryAsset.url,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     license: 'https://opensource.org/licenses/MIT',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
   const faqLd = {
     '@context': 'https://schema.org',
@@ -47,6 +48,15 @@ export function DownloadPage({ locale }: { locale: Locale }) {
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, '/download')}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
 
   const DownloadIcon = () => (
@@ -57,7 +67,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={[jsonLd, faqLd]} />
+      <JsonLd data={[webPageLd, jsonLd, faqLd]} />
 
       <PageHeader
         crumbs={[
@@ -110,7 +120,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
                 key={a.id}
                 href={a.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className={`dl-tile card-v flex flex-col p-5 ${a.recommended ? 'dl-tile-rec' : ''}`}
               >
                 <div className="flex items-center justify-between mb-4">
@@ -141,7 +151,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
           <div className="mt-6 flex gap-2.5 flex-wrap">
             {trust.map((tr) =>
               tr.ext ? (
-                <a key={tr.label} href={tr.href} target="_blank" rel="noopener noreferrer" className="chip">
+                <a key={tr.label} href={tr.href} target="_blank" rel="nofollow noopener noreferrer" className="chip">
                   {tr.label}
                 </a>
               ) : (
@@ -205,7 +215,7 @@ export function DownloadPage({ locale }: { locale: Locale }) {
               {d.greenPoints.map((p, i) => (
                 <li key={i} className="flex gap-3 text-[13.5px] leading-relaxed">
                   <span className="check-dot" aria-hidden>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </span>

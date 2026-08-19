@@ -10,7 +10,7 @@ export const APP = {
   name: 'Void Image Viewer',
   domain: 'voidimageviewer.com',
   baseUrl: 'https://voidimageviewer.com',
-  githubUrl: 'https://github.com/voidimageviewer/void-image-viewer',
+  githubUrl: 'https://github.com/voidtools/voidImageViewer',
   virusTotalUrl: 'https://www.virustotal.com/gui/file/7f3a9c2e21b',
   forumUrl: 'https://www.voidtools.com/forum/viewtopic.php?t=5623',
   license: 'MIT',

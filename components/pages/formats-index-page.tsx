@@ -24,11 +24,20 @@ export function FormatsIndexPage({ locale }: { locale: Locale }) {
       name: `${f.name} ${t.viewerSuffix}`,
       url: `${APP.baseUrl}${localePath(locale, `/supported-formats/${f.slug}`)}`,
     })),
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
+  }
+
+  const webPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `${APP.baseUrl}${localePath(locale, '/supported-formats')}`,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    isPartOf: { '@id': `${APP.baseUrl}/#website` },
   }
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={itemListLd} />
+      <JsonLd data={[webPageLd, itemListLd]} />
       <PageHeader
         crumbs={[
           { label: c.home, href: localePath(locale, '/') },
@@ -67,7 +76,7 @@ export function FormatsIndexPage({ locale }: { locale: Locale }) {
                   </span>
                   <span className="mt-1 font-mono text-[11.5px] inline-flex items-center gap-1" style={{ color: 'var(--violet)' }}>
                     {t.openOnline}
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
                   </span>

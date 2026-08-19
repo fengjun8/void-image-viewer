@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'zh',
-    title: 'VoidImageViewer软件截图 - 简洁无干扰的界面预览',
+    title: 'VoidImageViewer 软件截图 - 简洁无干扰的界面预览',
     description:
       '查看 VoidImageViewer（Void Image Viewer）简洁无干扰的界面：主查看器、文件夹缩略图、格式信息面板、GIF/WebP 动图播放、全屏模式与深色/浅色主题。免费开源。',
     path: '/screenshots',

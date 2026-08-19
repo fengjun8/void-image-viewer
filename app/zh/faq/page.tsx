@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata({
     locale: 'zh',
-    title: 'VoidImageViewer常见问题 - 下载安装使用全解答',
+    title: 'VoidImageViewer 常见问题 - 下载安装使用全解答',
     description:
       '关于 VoidImageViewer（Void Image Viewer）的常见问题：下载安装、安全性校验、WebP/AVIF/HEIC 等格式支持、便携版以及 Windows 默认图片查看器设置。',
     path: '/faq',

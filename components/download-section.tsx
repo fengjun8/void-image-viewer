@@ -59,18 +59,18 @@ export function DownloadSection({ locale }: DownloadSectionProps) {
               href={primaryHref}
               {...(isZh
                 ? { download: cnDownload.filename }
-                : { target: '_blank', rel: 'noopener noreferrer' })}
+                : { target: '_blank', rel: 'nofollow noopener noreferrer' })}
               className="dl-btn-primary flex items-center justify-center gap-2 px-5 py-2.5 rounded-[9px] text-[14px] font-medium"
             >
               ↓ {t.btnExe}
             </a>
-            <a href={zipHref} target="_blank" rel="noopener noreferrer" className="dl-btn-ghost flex items-center justify-center gap-2 px-5 py-2.5 rounded-[9px] text-[14px] font-medium">
+            <a href={zipHref} target="_blank" rel="nofollow noopener noreferrer" className="dl-btn-ghost flex items-center justify-center gap-2 px-5 py-2.5 rounded-[9px] text-[14px] font-medium">
               {t.btnZip}
             </a>
             <div className="flex gap-3.5 text-[12px] justify-center mt-1 dl-links">
-              <a href={REPO_URL} target="_blank" rel="noopener noreferrer">{t.github}</a>
+              <a href={REPO_URL} target="_blank" rel="nofollow noopener noreferrer">{t.github}</a>
               <a href={localePath(locale, '/release-notes')}>{t.allVersions}</a>
-              <a href={releasesUrl} target="_blank" rel="noopener noreferrer">{t.verify}</a>
+              <a href={releasesUrl} target="_blank" rel="nofollow noopener noreferrer">{t.verify}</a>
             </div>
           </div>
         </div>

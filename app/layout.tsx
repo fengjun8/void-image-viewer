@@ -9,7 +9,7 @@ const GA_MEASUREMENT_ID = 'G-G1Q6BW37DF'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' })
-const notoSansSC = Noto_Sans_SC({ subsets: ['latin'], variable: '--font-noto-sans-sc', weight: ['400', '500', '700'] })
+const notoSansSC = Noto_Sans_SC({ subsets: ['latin'], variable: '--font-noto-sans-sc' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://voidimageviewer.com'),
@@ -81,9 +81,6 @@ export const metadata: Metadata = {
     description: 'Lightweight, fast, open-source image viewer for Windows.',
     images: ['/og-image-1200x630.png'],
   },
-  alternates: {
-    canonical: 'https://voidimageviewer.com',
-  },
 }
 
 export const viewport: Viewport = {
@@ -104,6 +101,7 @@ export default async function RootLayout({
   const headerList = await headers()
   const pathname = headerList.get('x-pathname') ?? ''
   const lang = pathname.startsWith('/zh') ? 'zh' : 'en'
+  const isHomePage = pathname === '/' || pathname === '/zh'
 
   return (
     <html
@@ -111,6 +109,7 @@ export default async function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${notoSansSC.variable} bg-[--background]`}
     >
       <head>
+        {isHomePage && <link rel="preload" href="/hero-bg.jpg" as="image" />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -126,6 +125,11 @@ export default async function RootLayout({
                     'Free open-source image viewer for Windows — download page, features, supported formats and documentation.',
                   inLanguage: ['en', 'zh-CN'],
                   publisher: { '@id': 'https://voidimageviewer.com/#org' },
+                  potentialAction: {
+                    '@type': 'SearchAction',
+                    target: 'https://voidimageviewer.com/supported-formats?q={search_term_string}',
+                    'query-input': 'required name=search_term_string',
+                  },
                 },
                 {
                   '@type': 'Organization',
@@ -133,6 +137,7 @@ export default async function RootLayout({
                   name: 'Void Image Viewer',
                   url: 'https://voidimageviewer.com',
                   logo: 'https://voidimageviewer.com/logo-icon.png',
+                  sameAs: ['https://github.com/voidtools/voidImageViewer'],
                 },
               ],
             }),
