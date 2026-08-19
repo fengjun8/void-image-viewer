@@ -34,6 +34,14 @@ export function ContactPage({ locale }: { locale: Locale }) {
           <h2 className="h2-v mb-3">{t.softwareTitle}</h2>
           <p className="prose-v mb-10">{t.softwareBody}</p>
 
+          <h2 className="h2-v mb-3">{t.emailTitle}</h2>
+          <p className="prose-v mb-4">{t.emailBody}</p>
+          <div className="mb-10">
+            <a href={`mailto:${APP.contactEmail}`} className="btn-v-ghost">
+              {APP.contactEmail}
+            </a>
+          </div>
+
           <h2 className="h2-v mb-4">{t.linksTitle}</h2>
           <div className="flex flex-wrap gap-3">
             {links.map((l) => (

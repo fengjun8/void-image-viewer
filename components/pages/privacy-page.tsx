@@ -1,6 +1,7 @@
 import { PageShell } from '@/components/page-shell'
 import { PageHeader } from '@/components/page-header'
 import { ui, localePath, type Locale } from '@/lib/i18n'
+import { APP } from '@/lib/site-data'
 
 export function PrivacyPage({ locale }: { locale: Locale }) {
   const t = ui[locale].privacy
@@ -29,6 +30,13 @@ export function PrivacyPage({ locale }: { locale: Locale }) {
               <p className="prose-v" style={{ margin: 0 }}>{s.b}</p>
             </div>
           ))}
+          <div className="mb-8">
+            <h2 className="h2-v mb-3">{t.contactTitle}</h2>
+            <p className="prose-v" style={{ margin: 0 }}>
+              {t.contactBody}{' '}
+              <a href={`mailto:${APP.contactEmail}`} className="link-v">{APP.contactEmail}</a>
+            </p>
+          </div>
         </div>
       </section>
     </PageShell>

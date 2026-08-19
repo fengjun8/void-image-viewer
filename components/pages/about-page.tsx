@@ -13,6 +13,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
     { label: ui[locale].releaseNotes.title, href: localePath(locale, '/release-notes') },
     { label: ui[locale].installation.title, href: localePath(locale, '/installation') },
     { label: 'GitHub', href: APP.githubUrl, external: true },
+    { label: APP.contactEmail, href: `mailto:${APP.contactEmail}` },
   ]
 
   const dir = locale === 'zh' ? 'zh' : 'en'
