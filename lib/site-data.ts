@@ -13,7 +13,7 @@ export const APP = {
   githubUrl: 'https://github.com/voidtools/voidImageViewer',
   virusTotalUrl: 'https://www.virustotal.com/gui/file/7f3a9c2e21b',
   forumUrl: 'https://www.voidtools.com/forum/viewtopic.php?t=5623',
-  contactEmail: 'servie@voidimageviewer.com',
+  contactEmail: 'service@voidimageviewer.com',
   license: 'MIT',
   os: 'Windows 10, Windows 11 (64-bit)',
 }
