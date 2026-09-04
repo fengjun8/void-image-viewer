@@ -9,6 +9,7 @@ const sites = [
   { href: 'https://vlcmediaplayer.online', label: 'vlc media player' },
   { href: 'https://wiztree.world', label: 'wiztree' },
   { href: 'https://voidimageviewer.com', label: 'voidimageviewer' },
+  { href: 'https://randompokemon.online', label: 'Pokémon Generator' },
 ]
 
 const heading: Record<Locale, { tag: string; h2: string }> = {
