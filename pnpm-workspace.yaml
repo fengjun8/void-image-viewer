@@ -1,7 +1,5 @@
-allowBuilds:
-  '"': true
-  a: true
-  h: true
-  p: true
-  r: true
-  s: true
+onlyBuiltDependencies:
+  - esbuild
+  - msw
+  - sharp
+  - workerd
